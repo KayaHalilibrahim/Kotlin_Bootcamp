@@ -38,9 +38,6 @@ class AyakkabiAdapter (var mContext:Context,var ayakkabiListesi:List<Ayakkabilar
         t.textViewAyakkabi.text=ayakkabi.marka
         t.textViewFiyat.text="${ayakkabi.fiyat} Tl"
 
-        t.button.setOnClickListener {
-            Snackbar.make(it,"${ayakkabi.marka} sepete eklendi",Snackbar.LENGTH_LONG).show()
-        }
 
         t.cardViewAyakkabi.setOnClickListener{
            val gecis = AnasayfaFragmentDirections.toDetay(ayakkabi=ayakkabi)
