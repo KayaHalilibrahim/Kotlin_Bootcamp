@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewYemek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/material_dynamic_neutral95"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textViewYemekAdi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Baklava"
+                    android:textColor="@color/toolbarColor_orange"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewYemek"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewYemek" />
+
+                <TextView
+                    android:id="@+id/textViewFiyat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="70.00"
+                    android:textColor="@color/toolbarColor_orange"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewYemekAdi"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewYemek" />
+
+                <ImageView
+                    android:id="@+id/imageViewYemek"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baklava"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    app:backgroundTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewYemek"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/fav" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="toolbarAnasayfaBaslik"
+            type="String" />
+
+        <variable
+            name="ansayfaFragment"
+            type="com.example.bitirmeprojesi.ui.fragment.AnasayfaFragment" />
+
+
+        <variable
+            name="ansayfaAdapter"
+            type="com.example.bitirmeprojesi.ui.adapter.FoodsAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.AnasayfaFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarAnasayfa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/rvAnasayfa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:title="@{toolbarAnasayfaBaslik}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAnasayfa"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adapter="@{ansayfaAdapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarAnasayfa"
+            app:spanCount="2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAnasayfaSepet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:clickable="true"
+            app:tint="@color/white"
+            app:backgroundTint="@color/toolbarColor_orange"
+            app:layout_constraintBottom_toTopOf="@+id/rvAnasayfa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@drawable/shops" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
